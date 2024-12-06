@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceramic Vases Visualization</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+    <body>
+    <!-- Cover Section with Image Grid and Title -->
+    <div class="cover-section">
+        <div class="image-grid">
+            <!-- Dynamically populated images go here -->
+        </div>
+        <div class="title-overlay" id="first-title">
+            <h1>What Is a Vase?</h1>
+            <p>Deep Learning Insights from 25,447 Ceramic Vases at The Met</p>
+            <p><em>Scroll to Begin</em></p>
+        </div>
+    </div>
+
+   <!-- Section 2: Frequency Graph -->
+<section class="graph-section">
+    <div class="graph-and-text">
+        <!-- Graph Container (left side) -->
+        <div class="graph-container">
+            <canvas id="pottery-graph"></canvas>
+        </div>
+        <!-- Text Box (right side) -->
+        <div class="text-box">
+            <h2>Wait, people used vases 2,000 years ago?</h2>
+            <p>Ceramic vases have been crafted for over 2,000 years, from the 1st century to the present, and remain a part of our daily lives. Let me take you on a journey.</p>
+            <p>Press <em>SPACE</em> to move through time. Scroll to continue.</p>
+            <!-- Add the key inside the text box -->
+            <div class="graph-key">
+                <span style="display: inline-block; width: 20px; height: 10px; background-color: rgba(54, 162, 235, 0.6); margin-right: 5px;"></span>
+                <span class="graph-key-text">Number of Vases by Century</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Vase Image Container (now below the graph-and-text) -->
+        <div id="vase-image-container">
+            <!-- Empty container for vase images-->
+        </div>
+    </section>
+
+    
+    <!-- Section 3: Clustering Scatter Plot -->
+    <section class="cluster-section">
+        <div class="graph-and-text">
+            <!-- Graph Container (left side) -->
+            <div class="graph-container">
+                <canvas id="cluster-plot"></canvas>
+            </div>
+            <!-- Text Box Container (right side) -->
+            <div class="text-box" id="wider-text-box">
+                <h1>Another Perspective</h1>
+                <p>I was curious—what hidden connections might exist across 2,000 years of vases? So, I turned to a deep learning model for help. Using clustering, an unsupervised learning technique that doesn’t, the model searched for patterns all on its own. What could it find that I hadn’t noticed?</p>
+                <p>Clustering is like uncovering secret friendships between vases. It groups them together based on shared traits, but it doesn’t tell you why. Maybe it grouped them by color, shape, or even subtle textures—ultimately, it’s up to us to interpret the results. That’s the beauty (and mystery!) of clustering.</p>
+                <p>The results were 8 distinct clusters. Scroll down to explore! <img src="eyes_emoji.png" alt="Eyes Emoji" style="width: 30px; vertical-align: middle;"> </p>
+            </div>
+        </div>
+    </section>
+
+       <!-- Section 4: Grid of Clustered Images -->
+    <section class="cluster-grid-section">
+        <div class="cluster-grid-container" id="cluster-grid">
+            <!-- Images will be dynamically populated here -->
+        </div>
+        <!-- Text Box for Cluster Grid Section -->
+        <div class="text-box" id="cluster-grid-text">
+            <h1>Seeing the Data Anew</h1>
+            <p><img src="vase_emoji.png" alt="Vase Emoji" class="emoji-icon" style="max-width: 25px;"> Cluster 1: Black drinking and serving vessels, mostly Greek, with a few Roman examples of similar rounded forms.</p>
+            <p><img src="vase_emoji.png" alt="Vase Emoji" class="emoji-icon" style="max-width: 25px;"> Cluster 2: Focused on decorative motifs, includes full vases and fragments from ancient Greece.</p>
+            <p><img src="vase_emoji.png" alt="Vase Emoji" class="emoji-icon" style="max-width: 25px;"> Cluster 3: Earthy-toned vases and figurines, blending Greek and Roman styles from across the Mediterranean.</p>
+            <p><img src="vase_emoji.png" alt="Vase Emoji" class="emoji-icon" style="max-width: 25px;"> Cluster 4: Large, utilitarian vessels from Greece, Rome, Britain, and Egypt, with simple, practical designs.</p>
+            <p><img src="vase_emoji.png" alt="Vase Emoji" class="emoji-icon" style="max-width: 25px;"> Cluster 5: Stone fragments with functional, undecorated forms.</p>
+            <p><img src="vase_emoji.png" alt="Vase Emoji" class="emoji-icon" style="max-width: 25px;"> Cluster 6: Artistic, sculptural vases resembling animals; ceremonial in nature.</p>
+            <p><img src="vase_emoji.png" alt="Vase Emoji" class="emoji-icon" style="max-width: 25px;"> Cluster 7: Black vase fragments, likely remnants of cooking or storage vessels.</p>
+        </div>
+    </section>
+
+
+    <!-- Vase Examples -->
+    <div class="vase-examples" id="vase-examples">
+        <!-- Images will be dynamically populated here -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Example scroll to the graph section when space is pressed (adjust as needed)
+        window.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                event.preventDefault(); // Prevent default spacebar scroll behavior
+    
+                const graphSection = document.querySelector('.graph-section');
+                if (graphSection) {
+                    graphSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+    </script>
+    </body>    
+</body>
+
+</html>
